@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import java.lang.String?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Text?>
+
+
+<AnchorPane prefHeight="750.0" prefWidth="850.0" styleClass="dashboard" stylesheets="@../../Styles/Dashboard.css"
+            xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.jmc.kwikbank.Controllers.Client.DashboardController">
+   <Text fx:id="user_name" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="user_name" text="Olá, Douglas"
+         AnchorPane.leftAnchor="20.0" AnchorPane.topAnchor="30.0"/>
+   <Label fx:id="login_date" styleClass="date_lbl" text="Quarta, 01/05/2024" AnchorPane.rightAnchor="14.0"
+          AnchorPane.topAnchor="27.0"/>
+   <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="section_title" text="Resumo" AnchorPane.rightAnchor="14.0"
+         AnchorPane.topAnchor="90.0"/>
+   <Text layoutX="803.0" layoutY="113.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="section_title"
+         text="Minha Conta" AnchorPane.leftAnchor="20.0" AnchorPane.topAnchor="90.0"/>
+   <HBox prefHeight="180.0" prefWidth="620.0" styleClass="accounts_view" AnchorPane.leftAnchor="20.0"
+         AnchorPane.topAnchor="120.0">
+      <AnchorPane prefHeight="150.0" prefWidth="295.0">
+         <styleClass>
+            <String fx:value="account"/>
+            <String fx:value="acc_gradient"/>
+         </styleClass>
+         <Label fx:id="checking_bal" styleClass="account_balance" text="R$ 1000,00" AnchorPane.leftAnchor="14.0"
+                AnchorPane.topAnchor="25.0"/>
+         <Label styleClass="account_number" text="**** **** ****" AnchorPane.bottomAnchor="45.0"
+                AnchorPane.leftAnchor="14.0"/>
+         <Label fx:id="checking_acc_num" styleClass="account_number" text="5544" AnchorPane.bottomAnchor="47.0"
+                AnchorPane.leftAnchor="138.0"/>
+         <VBox prefHeight="100.0" prefWidth="35.0" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="14.0"/>
+         <FontAwesomeIconView glyphName="BANK" size="30" AnchorPane.rightAnchor="14.0"
+                              AnchorPane.topAnchor="7.0"/>
+         <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Checar Conta" AnchorPane.bottomAnchor="14.0"
+               AnchorPane.leftAnchor="14.0"/>
+      </AnchorPane>
+      <AnchorPane layoutX="10.0" layoutY="10.0" prefHeight="150.0" prefWidth="295.0">
+         <styleClass>
+            <String fx:value="acc_gradient"/>
+            <String fx:value="account"/>
+         </styleClass>
+         <Label fx:id="savings_bal" styleClass="account_balance" text="R$ 1000,00" AnchorPane.leftAnchor="14.0"
+                AnchorPane.topAnchor="25.0"/>
+         <Label styleClass="account_number" text="**** **** ****" AnchorPane.bottomAnchor="45.0"
+                AnchorPane.leftAnchor="14.0"/>
+         <Label fx:id="savings_acc_num" styleClass="account_number" text="5544" AnchorPane.bottomAnchor="47.0"
+                AnchorPane.leftAnchor="138.0"/>
+         <VBox prefHeight="100.0" prefWidth="35.0" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="14.0"/>
+         <FontAwesomeIconView glyphName="BANK" size="30" AnchorPane.rightAnchor="14.0"
+                              AnchorPane.topAnchor="7.0"/>
+         <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Salvar Conta" AnchorPane.bottomAnchor="14.0"
+               AnchorPane.leftAnchor="14.0"/>
+      </AnchorPane>
+   </HBox>
+   <VBox prefHeight="180.0" prefWidth="210.0" styleClass="sunmary_view" AnchorPane.rightAnchor="0.0"
+         AnchorPane.topAnchor="120.0">
+      <VBox prefHeight="200.0" prefWidth="100.0" styleClass="acc_sunmary_container">
+         <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Renda"/>
+         <Label fx:id="income_lbl" styleClass="income_amount" text="+ R$ 2000,50"/>
+         <Line endX="160.0"/>
+         <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Despesas"/>
+         <Label fx:id="expense_lbl" styleClass="expanse_amount" text="- R$ 800,15"/>
+      </VBox>
+   </VBox>
+   <Text layoutX="30.0" layoutY="113.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="section_title"
+         text="Últimas transações" AnchorPane.leftAnchor="20.0" AnchorPane.topAnchor="340.0"/>
+   <Text layoutX="30.0" layoutY="363.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="section_title"
+         text="Enviar dinheiro" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="340.0"/>
+   <ListView fx:id="transaction_listview" prefHeight="365.0" prefWidth="570.0" styleClass="transaction_listview"
+             AnchorPane.bottomAnchor="14.0" AnchorPane.leftAnchor="20.0"/>
+   <VBox prefHeight="366.0" prefWidth="240.0" styleClass="new_transaction_container" AnchorPane.bottomAnchor="14.0"
+         AnchorPane.rightAnchor="14.0">
+      <Label text="Identificação"/>
+      <TextField fx:id="payee_fld"/>
+      <Label text="Valor"/>
+      <TextField fx:id="amount_fld"/>
+      <Label text="Mensagem (Opcional)"/>
+      <TextArea fx:id="message_fld" prefHeight="70.0" prefWidth="200.0"/>
+      <Button fx:id="send_money_btn" mnemonicParsing="false" text="Enviar"/>
+   </VBox>
+</AnchorPane>
