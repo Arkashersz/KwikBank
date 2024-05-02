@@ -1,6 +1,8 @@
 package com.jmc.kwikbank.Views;
 
 import com.jmc.kwikbank.Controllers.Client.ClientController;
+import javafx.beans.property.SimpleStringProperty;
+import javafx.beans.property.StringProperty;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -9,9 +11,17 @@ import javafx.stage.Stage;
 
 public class ViewFactory {
     // Client Views
+    private final StringProperty clientSelectedMenuItem;
     private AnchorPane dashboardView;
+    private AnchorPane transactionsView;
 
-    public ViewFactory() {}
+    public ViewFactory() {
+        this.clientSelectedMenuItem = new SimpleStringProperty("");
+    }
+
+    public StringProperty getClientSelectedMenuItem() {
+        return clientSelectedMenuItem;
+    }
 
     public AnchorPane getDashboardView() {
         if(dashboardView == null) {
@@ -22,6 +32,17 @@ public class ViewFactory {
             }
         }
         return dashboardView;
+    }
+
+    public AnchorPane getTransactionsView() {
+        if (transactionsView == null) {
+            try {
+                transactionsView = new FXMLLoader(getClass().getResource("/Fxml/Client/Transactions.fxml")).load();
+            } catch (Exception e){
+                e.printStackTrace();
+            }
+        }
+        return transactionsView;
     }
 
     public void showLoginWindow() {
