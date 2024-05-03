@@ -49,7 +49,7 @@
     -fx-fill: #FFFFFF;
 }
 
-.acc_gradient {
+.account_gradient {
     -fx-background-color: linear-gradient(to right, #132A13, #253F25);
 }
 
@@ -68,14 +68,14 @@
 }
 
 /* Resumo da conta */
-.sunmary_view {
+.summary_view {
     -fx-background-color: #FFFFFF;
     -fx-padding: 5 10 5 10;
     -fx-spacing: 5;
     -fx-alignment: center_left;
 }
 
-.acc_sunmary_container {
+.acc_summary_container {
     -fx-padding: 10;
     -fx-spacing: 10;
     -fx-alignment: center_left;
@@ -85,7 +85,7 @@
     -fx-border-style: dashed;
 }
 
-.acc_sunmary_container Line {
+.acc_summary_container Line {
     -fx-stroke: #AAAAAA;
 }
 
@@ -118,7 +118,7 @@
 }
 
 /* Enviar dinheiro */
-.new_transaction_container {
+.new_trans_container {
     -fx-background-color: #EEEEEE;
     -fx-padding: 20 10 20 10;
     -fx-spacing: 10;
@@ -150,23 +150,5 @@
 }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+ {
+}

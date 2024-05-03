@@ -22,18 +22,18 @@
       <AnchorPane prefHeight="150.0" prefWidth="295.0">
          <styleClass>
             <String fx:value="account" />
-            <String fx:value="acc_gradient" />
+            <String fx:value="account_gradient" />
          </styleClass>
          <Label fx:id="checking_bal" styleClass="account_balance" text="R$ 1000,00" AnchorPane.leftAnchor="14.0" AnchorPane.topAnchor="25.0" />
          <Label styleClass="account_number" text="**** **** ****" AnchorPane.bottomAnchor="45.0" AnchorPane.leftAnchor="14.0" />
          <Label fx:id="checking_acc_num" styleClass="account_number" text="5544" AnchorPane.bottomAnchor="47.0" AnchorPane.leftAnchor="138.0" />
          <VBox prefHeight="100.0" prefWidth="35.0" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="14.0" />
          <FontAwesomeIconView glyphName="BANK" size="30" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="7.0" />
-         <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Checar Conta" AnchorPane.bottomAnchor="14.0" AnchorPane.leftAnchor="14.0" />
+         <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Conta Corrente" AnchorPane.bottomAnchor="14.0" AnchorPane.leftAnchor="14.0" />
       </AnchorPane>
       <AnchorPane layoutX="10.0" layoutY="10.0" prefHeight="150.0" prefWidth="295.0">
          <styleClass>
-            <String fx:value="acc_gradient" />
+            <String fx:value="account_gradient" />
             <String fx:value="account" />
          </styleClass>
          <Label fx:id="savings_bal" styleClass="account_balance" text="R$ 1000,00" AnchorPane.leftAnchor="14.0" AnchorPane.topAnchor="25.0" />
@@ -41,11 +41,11 @@
          <Label fx:id="savings_acc_num" styleClass="account_number" text="5544" AnchorPane.bottomAnchor="47.0" AnchorPane.leftAnchor="138.0" />
          <VBox prefHeight="100.0" prefWidth="35.0" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="14.0" />
          <FontAwesomeIconView glyphName="BANK" size="30" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="7.0" />
-         <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Salvar Conta" AnchorPane.bottomAnchor="14.0" AnchorPane.leftAnchor="14.0" />
+         <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Conta Poupança" AnchorPane.bottomAnchor="14.0" AnchorPane.leftAnchor="14.0" />
       </AnchorPane>
    </HBox>
-   <VBox prefHeight="180.0" prefWidth="210.0" styleClass="sunmary_view" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="120.0">
-      <VBox prefHeight="200.0" prefWidth="100.0" styleClass="acc_sunmary_container">
+   <VBox prefHeight="180.0" prefWidth="210.0" styleClass="summary_view" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="120.0">
+      <VBox prefHeight="200.0" prefWidth="100.0" styleClass="acc_summary_container">
          <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Renda" />
          <Label fx:id="income_lbl" styleClass="income_amount" text="+ R$ 2000,50" />
          <Line endX="160.0" />

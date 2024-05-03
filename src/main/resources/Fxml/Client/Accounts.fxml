@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="750.0" prefWidth="850.0" styleClass="accounts_view_container" stylesheets="@../../Styles/Accounts.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.jmc.kwikbank.Controllers.Client.AccountsController">
+    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Conta Corrente" AnchorPane.leftAnchor="14.0" AnchorPane.topAnchor="14.0" />
+    <VBox prefHeight="300.0" prefWidth="450.0" AnchorPane.leftAnchor="14.0" AnchorPane.topAnchor="40.0">
+        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Número da Conta" />
+        <Label fx:id="ch_acc_num" text="1234 5678 9101 1123" />
+        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Limite de Transações" />
+        <Label fx:id="transaction_limit" text="10" />
+        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Data de Criação" />
+        <Label fx:id="ch_acc_date" text="02/05/2024" />
+        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Saldo" />
+        <Label fx:id="ch_acc_bal" text="R$ 10.000,00" />
+    </VBox>
+    <Text layoutX="14.0" layoutY="397.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Conta Poupança" AnchorPane.leftAnchor="14.0" AnchorPane.topAnchor="364.0" />
+    <VBox layoutX="14.0" layoutY="401.0" prefHeight="300.0" prefWidth="450.0" AnchorPane.bottomAnchor="60.0" AnchorPane.leftAnchor="14.0">
+        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Número da Conta" />
+        <Label fx:id="sv_acc_num" text="1234 5678 9101 1123" />
+        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Saque" />
+        <Label fx:id="withdrawal_limit" text="R$ 4.000,00" />
+        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Data de Criação" />
+        <Label fx:id="sv_acc_date" text="02/05/2024" />
+        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Saldo" />
+        <Label fx:id="sv_acc_bal" text="R$ 10.000,00" />
+    </VBox>
+    <Text layoutX="450.0" layoutY="55.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Transferência para Conta Poupança" AnchorPane.rightAnchor="159.97657775878906" AnchorPane.topAnchor="40.0" />
+    <TextField fx:id="amount_to_sv" layoutX="445.0" layoutY="66.0" prefHeight="26.0" prefWidth="240.0" AnchorPane.rightAnchor="164.0" AnchorPane.topAnchor="72.0" />
+    <Button fx:id="trans_to_sv_btn" layoutX="539.0" layoutY="108.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="240.0" text="Transferir" AnchorPane.rightAnchor="164.0" AnchorPane.topAnchor="123.0">
+        <graphic>
+          <FontAwesomeIconView fill="WHITE" glyphName="ARROW_DOWN" size="20" />
+        </graphic>
+    </Button>
+    <Text layoutX="454.0" layoutY="378.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Transferência para Conta Corrente" AnchorPane.rightAnchor="162.22732543945312" AnchorPane.topAnchor="363.0" />
+    <TextField fx:id="amount_to_ch" layoutX="446.0" layoutY="397.0" prefHeight="26.0" prefWidth="240.0" AnchorPane.rightAnchor="164.0" AnchorPane.topAnchor="392.0" />
+    <Button fx:id="trans_to_cv_btn" layoutX="444.0" layoutY="442.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="240.0" text="Transferir" AnchorPane.rightAnchor="164.0" AnchorPane.topAnchor="441.0">
+        <graphic>
+          <FontAwesomeIconView fill="WHITE" glyphName="ARROW_UP" size="20" />
+        </graphic>
+    </Button>
+</AnchorPane>
