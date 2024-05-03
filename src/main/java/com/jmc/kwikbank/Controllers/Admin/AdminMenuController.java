@@ -1,6 +1,7 @@
 package com.jmc.kwikbank.Controllers.Admin;
 
 import com.jmc.kwikbank.Models.Model;
+import com.jmc.kwikbank.Views.AdminMenuOptions;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 
@@ -21,6 +22,6 @@ public class AdminMenuController implements Initializable {
     private void addListeners(){}
 
     private void onCreateCliente() {
-        Model.getInstance().getViewFactory().getAdminSelectedMenuItem().set("CreateCliente");
+        Model.getInstance().getViewFactory().getAdminSelectedMenuItem().set(AdminMenuOptions.CREATE_CLIENTS);
     }
 }
