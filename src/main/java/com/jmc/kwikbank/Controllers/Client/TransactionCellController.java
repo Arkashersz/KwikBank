@@ -1,5 +1,6 @@
 package com.jmc.kwikbank.Controllers.Client;
 
+import com.jmc.kwikbank.Models.Transaction;
 import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
@@ -15,6 +16,12 @@ public class TransactionCellController implements Initializable {
     public Label sender_lbl;
     public Label receive_lbl;
     public Label amount_lbl;
+
+    private final Transaction transaction;
+
+    public  TransactionCellController(Transaction transaction) {
+        this.transaction = transaction;
+    }
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {}
