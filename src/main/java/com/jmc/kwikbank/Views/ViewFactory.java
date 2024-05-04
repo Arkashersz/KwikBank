@@ -5,6 +5,7 @@ import com.jmc.kwikbank.Controllers.Client.ClientController;
 import javafx.beans.property.ObjectProperty;
 import javafx.beans.property.SimpleObjectProperty;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
@@ -20,6 +21,7 @@ public class ViewFactory {
     // Admin Views
     private final ObjectProperty<AdminMenuOptions> adminSelectedMenuItem;
     private AnchorPane createClientView;
+    private AnchorPane clientsView;
 
     public ViewFactory() {
         this.loginAccountType = AccountType.CLIENTE;
@@ -86,14 +88,25 @@ public class ViewFactory {
     }
 
     public AnchorPane getCreateClientView() {
-        if (createClientView == null) {
+        if (createClientView == null){
             try {
-                createClientView = new FXMLLoader(getClass().getResource("/Fxml/Admin/CreateCliente.fxml")).load();
+                createClientView = new FXMLLoader(getClass().getResource("/Fxml/Admin/CreateClient.fxml")).load();
             } catch (Exception e){
                 e.printStackTrace();
             }
         }
         return createClientView;
+    }
+
+    public AnchorPane getClientsView() {
+        if (clientsView == null) {
+            try {
+                clientsView = new FXMLLoader(getClass().getResource("/Fxml/Admin/Clients.fxml")).load();
+            } catch (Exception e){
+                e.printStackTrace();
+            }
+        }
+        return clientsView;
     }
 
     public void showAdminWindow() {

@@ -8,33 +8,26 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Text?>
 
-
-<AnchorPane prefHeight="750.0" prefWidth="850.0" styleClass="create_client_container"
-            stylesheets="@../../Styles/CreteClient.css" xmlns="http://javafx.com/javafx/21"
-            xmlns:fx="http://javafx.com/fxml/1"
-            fx:controller="com.jmc.kwikbank.Controllers.Admin.CreateClientController">
-   <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Criar Nova Conta" AnchorPane.leftAnchor="14.0"
-         AnchorPane.topAnchor="14.0"/>
-   <VBox fillWidth="false" layoutX="14.0" layoutY="30.0" prefHeight="700.0" prefWidth="600.0"
-         AnchorPane.leftAnchor="14.0" AnchorPane.topAnchor="40.0">
-      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Nome:"/>
-      <TextField fx:id="fName_fld"/>
-      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Último Sobrenome:"/>
-      <TextField fx:id="lName_fld" layoutX="10.0" layoutY="45.0"/>
-      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Senha:"/>
-      <TextField fx:id="password_fld" layoutX="10.0" layoutY="69.0"/>
-      <Text layoutX="10.0" layoutY="109.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Identificação:"/>
-      <CheckBox fx:id="paAddress_box" mnemonicParsing="false"/>
-      <Label fx:id="pAddress_lbl" styleClass="payee_address_lbl"/>
-      <Text layoutX="10.0" layoutY="153.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Contas:"/>
-      <CheckBox fx:id="ch_acc_box" mnemonicParsing="false" text="Adicionar Conta Corrente"/>
-      <Text layoutX="10.0" layoutY="205.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Saldo Conta Corrente:"/>
-      <TextField fx:id="ch_amount_fld" layoutX="10.0" layoutY="114.0"/>
-      <CheckBox fx:id="sv_acc_box" layoutX="10.0" layoutY="204.0" mnemonicParsing="false"
-                text="Adicionar Conta Poupança"/>
-      <Text layoutX="10.0" layoutY="239.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Saldo Conta Poupança"/>
-      <TextField fx:id="sv_amount_fld" layoutX="10.0" layoutY="242.0"/>
-      <Button fx:id="create_client_btn" mnemonicParsing="false" text="Criar"/>
-      <Label fx:id="eror_lbl" styleClass="error_lbl" text="error"/>
+<AnchorPane prefHeight="750.0" prefWidth="850.0" styleClass="create_client_container" stylesheets="@../../Styles/CreateClient.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.jmc.kwikbank.Controllers.Admin.CreateClientController">
+   <Text layoutX="14.0" layoutY="27.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Cadastrar Novo Cliente" AnchorPane.leftAnchor="14.0" AnchorPane.topAnchor="14.0" />
+   <VBox fillWidth="false" layoutX="14.0" layoutY="41.0" prefHeight="700.0" prefWidth="600.0" AnchorPane.leftAnchor="14.0" AnchorPane.topAnchor="40.0">
+      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Nome:" />
+      <TextField fx:id="fName_fld" />
+      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Último Sobrenome:" />
+      <TextField fx:id="lName_fld" />
+      <Text layoutX="10.0" layoutY="66.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Senha:" />
+      <TextField fx:id="password_fld" layoutX="10.0" layoutY="69.0" />
+      <Text layoutX="10.0" layoutY="109.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Identificação" />
+      <CheckBox fx:id="pAddress_box" mnemonicParsing="false" />
+      <Label fx:id="pAddress_lbl" styleClass="payee_address_lbl" />
+      <Text layoutX="10.0" layoutY="153.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Contas:" />
+      <CheckBox fx:id="ch_acc_box" mnemonicParsing="false" text="Adicionar Conta Corrente" />
+      <Text layoutX="10.0" layoutY="205.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Saldo Conta Corrente" />
+      <TextField fx:id="ch_amount_fld" layoutX="10.0" layoutY="114.0" />
+      <CheckBox fx:id="sv_acc_box" layoutX="10.0" layoutY="207.0" mnemonicParsing="false" text="Adicionar Conta Poupança" />
+      <Text layoutX="10.0" layoutY="239.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Saldo Conta Poupança" />
+      <TextField fx:id="sv_amount_fld" layoutX="10.0" layoutY="245.0" />
+      <Button fx:id="create_client_btn" mnemonicParsing="false" text="Cadastrar" />
+      <Label fx:id="error_lbl" layoutX="10.0" layoutY="175.0" styleClass="error_lbl" />
    </VBox>
 </AnchorPane>

@@ -20,7 +20,7 @@
    <VBox layoutX="219.0" layoutY="50.0" prefHeight="350.0" prefWidth="350.0" styleClass="login_form_container"
          AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="20.0">
       <Label id="choice-prompt-text" text="Conta"/>
-      <ChoiceBox fx:id="acc_selector" prefWidth="150.0" styleClass="account_selector"/>
+      <ChoiceBox fx:id="acc_selector" prefWidth="90.0" styleClass="account_selector"/>
       <Label fx:id="id_lbl" text="Identificação"/>
       <TextField fx:id="id_fld" styleClass="input_field"/>
       <Label fx:id="password_lbl" text="Senha"/>

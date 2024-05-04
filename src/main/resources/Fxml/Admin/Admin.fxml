@@ -7,7 +7,7 @@
     <left>
         <fx:include source="AdminMenu.fxml"/>
     </left>
-    
+
     <center>
         <fx:include source="CreateClient.fxml"/>
     </center>
