@@ -9,6 +9,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Text?>
 
+<?import javafx.scene.control.PasswordField?>
 <AnchorPane prefHeight="400.0" prefWidth="600.0" styleClass="login_container" stylesheets="@../Styles/login.css"
             xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1"
             fx:controller="com.jmc.kwikbank.Controllers.LoginController">
@@ -24,7 +25,7 @@
       <Label fx:id="id_lbl" text="Identificação"/>
       <TextField fx:id="id_fld" styleClass="input_field"/>
       <Label fx:id="password_lbl" text="Senha"/>
-      <TextField fx:id="password_fld" styleClass="input_field"/>
+      <PasswordField fx:id="password_fld" styleClass="input_field"/>
       <Button fx:id="login_btn" mnemonicParsing="false" text="Acessar"/>
       <Label fx:id="error_lbl" styleClass="error_lbl" />
    </VBox>
