@@ -3,6 +3,7 @@ package com.jmc.kwikbank.Models;
 import com.jmc.kwikbank.Views.AccountType;
 import com.jmc.kwikbank.Views.ViewFactory;
 
+import javax.xml.transform.Result;
 import java.sql.ResultSet;
 import java.time.LocalDate;
 
@@ -10,13 +11,13 @@ public class Model {
     private static Model model;
     private final ViewFactory viewFactory;
     private final DatabaseDriver databaseDriver;
-    private AccountType loginAccountType = AccountType.CLIENTE;
 
     // Client Data Section
     private final Client client;
     private boolean clientLoginSuccessFlag;
 
     // Admin Data Section
+    private boolean adminLoginSuccessFlag;
 
     private Model() {
         this.viewFactory = new ViewFactory();
@@ -26,6 +27,7 @@ public class Model {
         this.client = new Client("", "", "", null, null, null);
 
         // Admin Data Section
+        this.adminLoginSuccessFlag = false;
     }
 
     public static synchronized Model getInstance() {
@@ -41,13 +43,7 @@ public class Model {
     public DatabaseDriver getDatabaseDriver() {
         return databaseDriver;
     }
-    public AccountType getLoginAccount() {
-        return loginAccountType;
-    }
 
-    public void setLoginAccountType(AccountType loginAccountType) {
-        this.loginAccountType = loginAccountType;
-    }
 
     /*
     * Client Methods Section
@@ -77,6 +73,23 @@ public class Model {
                 this.clientLoginSuccessFlag = true;
             }
         } catch (Exception e){
+            e.printStackTrace();
+        }
+    }
+    // Admin Methods Section
+    public boolean getAdminLoginSuccessFlag() {
+        return this.adminLoginSuccessFlag;
+    }
+    public void setAdminLoginSuccessFlag(boolean adminLoginSuccessFlag) {
+        this.adminLoginSuccessFlag = adminLoginSuccessFlag;
+    }
+    public void evaluateAdminCred(String username, String password) {
+        ResultSet resultSet = databaseDriver.getAdminData(username, password);
+        try {
+            if(resultSet.isBeforeFirst()){
+                this.adminLoginSuccessFlag = true;
+            }
+        }catch(Exception e){
             e.printStackTrace();
         }
     }
