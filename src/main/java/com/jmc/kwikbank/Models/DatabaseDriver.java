@@ -81,6 +81,18 @@ public class DatabaseDriver {
         }
     }
 
+    public ResultSet getAllClientsData() {
+        Statement statement;
+        ResultSet resultSet = null;
+        try {
+            statement = this.conn.createStatement();
+            resultSet = statement.executeQuery("SELECT * FROM Clients;");
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return resultSet;
+    }
+
     /*
     *Métodos Úteis
      */
@@ -96,5 +108,29 @@ public class DatabaseDriver {
             e.printStackTrace();
         }
         return id;
+    }
+
+    public ResultSet getAllCheckingAccountsData(String pAddress) {
+        Statement statement;
+        ResultSet resultSet = null;
+        try{
+            statement = this.conn.createStatement();
+            resultSet = statement.executeQuery("SELECT * FROM CheckingAccounts WHERE Owner='"+pAddress+"';");
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return resultSet;
+    }
+
+    public ResultSet getAllSavingsAccountsData(String pAddress) {
+        Statement statement;
+        ResultSet resultSet = null;
+        try{
+            statement = this.conn.createStatement();
+            resultSet = statement.executeQuery("SELECT * FROM SavingsAccounts WHERE Owner='"+pAddress+"';");
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return resultSet;
     }
 }

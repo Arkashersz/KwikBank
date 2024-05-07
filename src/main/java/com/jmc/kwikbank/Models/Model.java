@@ -2,6 +2,8 @@ package com.jmc.kwikbank.Models;
 
 import com.jmc.kwikbank.Views.AccountType;
 import com.jmc.kwikbank.Views.ViewFactory;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 
 import javax.xml.transform.Result;
 import java.sql.ResultSet;
@@ -18,6 +20,7 @@ public class Model {
 
     // Admin Data Section
     private boolean adminLoginSuccessFlag;
+    private final ObservableList<Client> clients;
 
     private Model() {
         this.viewFactory = new ViewFactory();
@@ -28,6 +31,7 @@ public class Model {
 
         // Admin Data Section
         this.adminLoginSuccessFlag = false;
+        this.clients = FXCollections.observableArrayList();
     }
 
     public static synchronized Model getInstance() {
