@@ -1,10 +1,14 @@
 package com.jmc.kwikbank.Controllers.Client;
 
+import com.jmc.kwikbank.Models.Model;
+import javafx.beans.binding.Bindings;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 import javafx.scene.text.Text;
 
 import java.net.URL;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.ResourceBundle;
 
 public class DashboardController implements Initializable {
@@ -23,5 +27,31 @@ public class DashboardController implements Initializable {
     public Button send_money_btn;
 
     @Override
-    public void initialize(URL url, ResourceBundle resourceBundle) {}
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+        bindData();
+    }
+
+    private void bindData() {
+        user_name.textProperty().bind(
+                Bindings.concat("Olá, ").concat(
+                        Model.getInstance().getClient().firstNameProperty()
+                )
+        );
+
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+        login_date.setText("Hoje é, " + LocalDate.now().format(formatter));
+
+        checking_bal.textProperty().bind(
+                Model.getInstance().getClient().checkingAccountProperty().get().balanceProperty().asString()
+        );
+        checking_acc_num.textProperty().bind(
+                Model.getInstance().getClient().checkingAccountProperty().get().accountNumberProperty()
+        );
+        savings_bal.textProperty().bind(
+                Model.getInstance().getClient().savingsAccountProperty().get().balanceProperty().asString()
+        );
+        savings_acc_num.textProperty().bind(
+                Model.getInstance().getClient().savingsAccountProperty().get().accountNumberProperty()
+        );
+    }
 }
