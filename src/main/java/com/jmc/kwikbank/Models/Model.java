@@ -7,6 +7,7 @@ import javafx.collections.ObservableList;
 
 import javax.xml.transform.Result;
 import java.sql.ResultSet;
+import java.sql.Statement;
 import java.time.LocalDate;
 
 public class Model {
@@ -124,6 +125,23 @@ public class Model {
         }catch (Exception e) {
             e.printStackTrace();
         }
+    }
+
+    public ObservableList<Client> searchClients(String pAddress) {
+        ObservableList<Client> searchResults = FXCollections.observableArrayList();
+        ResultSet resultSet = databaseDriver.searchClient(pAddress);
+        try {
+            CheckingAccount checkingAccount = getCheckingAccount(pAddress);
+            SavingsAccount savingsAccount = getSavingsAccount(pAddress);
+            String fName = resultSet.getString("FirstName");
+            String lName = resultSet.getString("LastName");
+            String[] dateParts =resultSet.getString("Date").split("-");
+            LocalDate date = LocalDate.of(Integer.parseInt(dateParts[0]), Integer.parseInt(dateParts[1]), Integer.parseInt(dateParts[2]));
+            searchResults.add(new Client(fName, lName, pAddress, checkingAccount, savingsAccount, date));
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+        return searchResults;
     }
 
     // Utility Methods Section
