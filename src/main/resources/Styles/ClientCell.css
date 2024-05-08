@@ -2,7 +2,7 @@
 .client_cell_container {
     -fx-background-color: #FFFFFF;
     -fx-background-radius: 10;
-    -fx-effect: dropshadow(three-pass-box, #000000, 5, 0, 0, 7);
+    -fx-effect: dropshadow(three-pass-box, #DDDDDD, 5, 0, 0, 7);
 }
 
 .client_cell_container FontAwesomeIconView {
@@ -38,6 +38,3 @@
 .delete_btn:hover {
     -fx-cursor: hand;
 }
-
-
-
