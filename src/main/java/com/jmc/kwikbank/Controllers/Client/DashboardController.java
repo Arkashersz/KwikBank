@@ -1,6 +1,7 @@
 package com.jmc.kwikbank.Controllers.Client;
 
 import com.jmc.kwikbank.Models.Model;
+import com.jmc.kwikbank.Views.TransactionCellFactory;
 import javafx.beans.binding.Bindings;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
@@ -29,6 +30,9 @@ public class DashboardController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         bindData();
+        initLatestTransactionList();
+        transaction_listview.setItems(Model.getInstance().getLatestTransactions());
+        transaction_listview.setCellFactory(e -> new TransactionCellFactory());
     }
 
     private void bindData() {
@@ -53,5 +57,10 @@ public class DashboardController implements Initializable {
         savings_acc_num.textProperty().bind(
                 Model.getInstance().getClient().savingsAccountProperty().get().accountNumberProperty()
         );
+    }
+
+    private void initLatestTransactionList() {
+        if (Model.getInstance().getLatestTransactions().isEmpty());
+        Model.getInstance().setLatestTransactions();
     }
 }
