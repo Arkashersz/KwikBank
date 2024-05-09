@@ -4,6 +4,7 @@ import com.jmc.kwikbank.Models.Model;
 import com.jmc.kwikbank.Models.Transaction;
 import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.paint.Color;
 
@@ -18,6 +19,7 @@ public class TransactionCellController implements Initializable {
     public Label sender_lbl;
     public Label receive_lbl;
     public Label amount_lbl;
+    public Button message_btn;
 
     private final Transaction transaction;
 
@@ -31,6 +33,7 @@ public class TransactionCellController implements Initializable {
         receive_lbl.textProperty().bind(transaction.receiverProperty());
         amount_lbl.textProperty().bind(transaction.amountProperty().asString());
         trans_date_lbl.textProperty().bind(transaction.dateProperty().asString());
+        message_btn.setOnAction(event -> Model.getInstance().getViewFactory().showMessageWindow(transaction.senderProperty().get(), transaction.messageProperty().get()));
         transactionIcons();
     }
 
