@@ -2,10 +2,8 @@ package com.jmc.kwikbank.Controllers.Admin;
 
 import com.jmc.kwikbank.Models.Model;
 import javafx.fxml.Initializable;
-import javafx.scene.control.Button;
-import javafx.scene.control.CheckBox;
-import javafx.scene.control.Label;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
+import javafx.stage.Window;
 
 import java.net.URL;
 import java.time.LocalDate;
@@ -64,8 +62,7 @@ public class CreateClientController implements Initializable {
         String lName = lName_fld.getText();
         String password = password_fld.getText();
         Model.getInstance().getDatabaseDriver().createClient(fName, lName, payeeAddress, password, LocalDate.now());
-        error_lbl.setStyle("-fx-text-fill: blue; -fx-font-size: 1.3em; -fx-font-weight: bold");
-        error_lbl.setText("Cliente cadastrado com sucesso!");
+        showAlert("KwikBank", "Cliente cadastrado com sucesso!", create_client_btn.getScene().getWindow());
         emptyFields();
     }
 
@@ -105,5 +102,14 @@ public class CreateClientController implements Initializable {
         ch_amount_fld.setText("");
         sv_acc_box.setSelected(false);
         sv_amount_fld.setText("");
+    }
+
+    private void showAlert(String title, String content, Window ownerWindow) {
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setTitle(title);
+        alert.setHeaderText(null);
+        alert.setContentText(content);
+        alert.initOwner(ownerWindow);
+        alert.showAndWait();
     }
 }
