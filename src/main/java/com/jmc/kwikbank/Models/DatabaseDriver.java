@@ -168,6 +168,14 @@ public class DatabaseDriver {
         }
     }
 
+    public void deleteClient(String payeeAddress) {
+        try {
+            Statement statement = this.conn.createStatement();
+            statement.executeUpdate("DELETE FROM Clients WHERE PayeeAddress='" + payeeAddress + "';");
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
     /*
     *Métodos Úteis
      */

@@ -22,7 +22,7 @@
       <Label fx:id="date_lbl" text="03/05/2024"/>
    </HBox>
    <Button fx:id="delete_btn" layoutX="684.0" layoutY="12.0" mnemonicParsing="false" styleClass="delete_btn"
-           text="Delete" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="12.0">
+           text="Remover" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="12.0">
       <graphic>
          <FontAwesomeIconView glyphName="WINDOW_CLOSE_ALT" size="15"/>
       </graphic>

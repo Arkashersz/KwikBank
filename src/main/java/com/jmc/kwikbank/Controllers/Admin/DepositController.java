@@ -1,8 +1,10 @@
+// DepositController.java
+
 package com.jmc.kwikbank.Controllers.Admin;
 
 import com.jmc.kwikbank.Models.Client;
 import com.jmc.kwikbank.Models.Model;
-import com.jmc.kwikbank.Views.ClientCellFactory;
+import com.jmc.kwikbank.Views.DepositCellFactory;
 import javafx.collections.ObservableList;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Alert;
@@ -22,6 +24,7 @@ public class DepositController implements Initializable {
     public TextField amount_fld;
     public Button deposit_btn;
 
+    private ObservableList<Client> searchResults;
     private Client client;
 
     @Override
@@ -31,10 +34,19 @@ public class DepositController implements Initializable {
     }
 
     private void onClientSearch() {
-        ObservableList<Client> searchResults = Model.getInstance().searchClients(pAddress_fld.getText());
-        result_listview.setItems(searchResults);
-        result_listview.setCellFactory(e -> new ClientCellFactory());
-        client = searchResults.get(0);
+        // Armazenar os resultados da pesquisa em uma lista local
+        searchResults = Model.getInstance().searchClients(pAddress_fld.getText());
+        if (searchResults.isEmpty()) {
+            // Exibir alerta se nenhum resultado for encontrado
+            showAlert("KwikBank", "Nenhum cliente encontrado.", search_btn.getScene().getWindow());
+        } else {
+            result_listview.setItems(searchResults);
+            // Passar a lista de resultados e a listView para o DepositCellFactory
+            result_listview.setCellFactory(e -> new DepositCellFactory(searchResults, result_listview));
+            client = searchResults.get(0);
+        }
+        // Limpar o campo de pesquisa
+        pAddress_fld.setText("");
     }
 
     private void onDeposit() {
