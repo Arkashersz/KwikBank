@@ -22,21 +22,44 @@
 /* Visualização da conta */
 .accounts_view {
     -fx-background-color: #FFFFFF;
-    -fx-background-radius: 10 0 0 10;
+    -fx-background-radius: 10;
     -fx-padding: 10 0 10 0;
     -fx-alignment: center;
     -fx-border-width: 0 1 0 0;
-    -fx-border-color: #000000;
     -fx-spacing: 10;
+
 }
 
 .account {
-    -fx-background-radius: 5;
-    -fx-effect: dropshadow(three-pass-box, #AAAAAA, 10, 0, 0, 10);
+
+}
+
+#card1, #card2 {
+    -fx-background-radius: 15;
+}
+
+.unlock-button1 {
+    -fx-background-color: linear-gradient(to right, #1A3384, #2B49B3);
+    -fx-min-width: 30px; /* Defina o tamanho mínimo em largura */
+    -fx-min-height: 25px; /* Defina o tamanho mínimo em altura */
+    -fx-max-width: 30px; /* Defina o tamanho máximo em largura */
+    -fx-max-height: 25px; /* Defina o tamanho máximo em altura */
+}
+
+.unlock-button2 {
+    -fx-background-color: linear-gradient(to right, #919191, #C1C1C1);
+    -fx-min-width: 30px; /* Defina o tamanho mínimo em largura */
+    -fx-min-height: 25px; /* Defina o tamanho mínimo em altura */
+    -fx-max-width: 30px; /* Defina o tamanho máximo em largura */
+    -fx-max-height: 25px; /* Defina o tamanho máximo em altura */
+}
+
+.unlock-button:hover {
+    -fx-cursor: hand;
 }
 
 .account VBox {
-    -fx-background-color: #FFFFFF;
+    -fx-background-color: linear-gradient(to right, #545454, #696969);
 }
 
 .account Text {
@@ -49,8 +72,14 @@
     -fx-fill: #FFFFFF;
 }
 
-.account_gradient {
-    -fx-background-color: linear-gradient(to right, #132A13, #253F25);
+.account_gradient1 {
+    -fx-background-color: linear-gradient(to right, #1A3384, #2B49B3);
+    -fx-background-radius: 15;
+}
+
+.account_gradient2 {
+    -fx-background-color: linear-gradient(to right, #919191, #C1C1C1);
+    -fx-background-radius: 15;
 }
 
 .account_balance {
@@ -65,40 +94,6 @@
     -fx-font-family: Calibri;
     -fx-font-size: 1.5em;
     -fx-text-alignment: center;
-}
-
-/* Resumo da conta */
-.summary_view {
-    -fx-background-color: #FFFFFF;
-    -fx-padding: 5 10 5 10;
-    -fx-spacing: 5;
-    -fx-alignment: center_left;
-}
-
-.acc_summary_container {
-    -fx-padding: 10;
-    -fx-spacing: 10;
-    -fx-alignment: center_left;
-    -fx-border-radius: 10;
-    -fx-border-color: #999999;
-    -fx-border-width: 1;
-    -fx-border-style: dashed;
-}
-
-.acc_summary_container Line {
-    -fx-stroke: #AAAAAA;
-}
-
-.income_amount {
-    -fx-text-fill: #00AA00;
-    -fx-font-family: "Calibri Light";
-    -fx-font-size: 1.5em;
-}
-
-.expanse_amount {
-    -fx-text-fill: #ff0000;
-    -fx-font-family: "Calibri Light";
-    -fx-font-size: 1.5em;
 }
 
 /* Visualização das Transações */
@@ -137,9 +132,9 @@
 }
 
 .new_transaction_container Button {
-    -fx-background-color: linear-gradient(to right, #132A13, #253F25);
+    -fx-background-color: linear-gradient(to right, #1b211b, #626262);
     -fx-effect: dropshadow(three-pass-box, #AAAAAA, 3, 0, 0, 3);
-    -fx-pref-width: 230;
+    -fx-pref-width: 250;
     -fx-font-size: 1.5em;
     -fx-font-family: "Calibri Light";
     -fx-text-fill: #FFFFFF;

@@ -9,6 +9,7 @@ import javax.xml.transform.Result;
 import java.sql.ResultSet;
 import java.sql.Statement;
 import java.time.LocalDate;
+import java.util.Comparator;
 
 public class Model {
     private static Model model;
@@ -108,8 +109,13 @@ public class Model {
         }
     }
 
-    public void setLatestTransactions() {
-        prepareTransactions(this.latestTransactions, 4);
+    public void setLatestTransactions(int maxTransactions) {
+        latestTransactions.clear(); // Limpa a lista de transações mais recentes
+        prepareTransactions(latestTransactions, -1); // Obtém todas as transações do banco de dados
+        latestTransactions.sort(Comparator.comparing(Transaction::getDate).reversed()); // Classifica as transações pela data em ordem decrescente
+        if (maxTransactions > 0 && maxTransactions < latestTransactions.size()) {
+            latestTransactions.subList(maxTransactions, latestTransactions.size()).clear(); // Limita o número de transações com base no número máximo especificado
+        }
     }
 
     public ObservableList<Transaction> getLatestTransactions() {

@@ -14,15 +14,15 @@
       <FontAwesomeIconView fx:id="out_icon" glyphName="LONG_ARROW_LEFT" size="17" />
    </VBox>
    <Label fx:id="trans_date_lbl" layoutX="64.0" layoutY="22.0" styleClass="trans_date_lbl" text="04/05/2024" AnchorPane.leftAnchor="100.0" AnchorPane.topAnchor="22.0" />
-   <Label fx:id="sender_lbl" layoutX="222.2" layoutY="22.4" styleClass="trans_pAddress_lbl" text="Douglas" AnchorPane.leftAnchor="222.2" AnchorPane.topAnchor="22.4" />
+   <Label fx:id="sender_lbl" layoutX="222.2" layoutY="22.4" styleClass="trans_pAddress_lbl" text="Douglas" AnchorPane.leftAnchor="205.0" AnchorPane.topAnchor="22.4" />
    <Line endY="20.0" layoutX="307.0" layoutY="18.0" startY="2.79" AnchorPane.bottomAnchor="21.5" AnchorPane.leftAnchor="300.0" />
-   <Label fx:id="receive_lbl" layoutX="333.0" layoutY="22.4" styleClass="trans_pAddress_lbl" text="Santana" AnchorPane.leftAnchor="333.0" AnchorPane.topAnchor="22.4" />
+   <Label fx:id="receive_lbl" layoutX="333.0" layoutY="22.4" styleClass="trans_pAddress_lbl" text="Santana" AnchorPane.leftAnchor="340.0" AnchorPane.topAnchor="22.4" />
    <Label fx:id="amount_lbl" layoutX="456.0" layoutY="17.0" styleClass="trans_amount_lbl" text="R$500,00" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="17.0">
       <graphic>
          <FontAwesomeIconView glyphName="MONEY" />
       </graphic>
    </Label>
-   <Button fx:id="message_btn" layoutX="393.0" layoutY="18.0" mnemonicParsing="false" styleClass="message_btn" AnchorPane.rightAnchor="110.0" AnchorPane.topAnchor="18.0">
+   <Button fx:id="message_btn" layoutX="393.0" layoutY="18.0" mnemonicParsing="false" styleClass="message_btn" AnchorPane.rightAnchor="100.0" AnchorPane.topAnchor="18.0">
       <graphic>
          <FontAwesomeIconView glyphName="BELL" size="14" />
       </graphic>

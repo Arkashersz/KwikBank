@@ -38,15 +38,12 @@
 }
 
 .trans_amount_lbl {
-    -fx-background-color: #132A13;
     -fx-background-radius: 2;
-    -fx-text-fill: #FFFFFF;
     -fx-padding: 5;
     -fx-font-weight: 700;
 }
 
 .trans_amount_lbl FontAwesomeIconView {
-    -fx-fill: #FFFFFF;
 }
 
 

@@ -34,4 +34,7 @@ public class Transaction {
     public StringProperty messageProperty() {
         return this.message;
     }
+    public LocalDate getDate() {
+        return date.get();
+    }
 }

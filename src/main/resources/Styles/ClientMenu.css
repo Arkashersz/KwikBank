@@ -19,7 +19,7 @@
 }
 
 .title_container FontAwesomeIconView {
-    -fx-fill: #132A13;
+    -fx-background-color: linear-gradient(to right, #1b211b, #626262);
 }
 
 .title_container Text {
@@ -38,7 +38,7 @@
     -fx-pref-width: 115;
     -fx-pref-height: 40;
     -fx-background-color: #FFFFFF;
-    -fx-text-fill: #132A13;
+    -fx-text-fill: #000000;
     -fx-font-size: 1.1em;
     -fx-alignment: center_left;
     -fx-effect: dropshadow(three-pass-box, #DDDDDD, 5, 0, 0, 6);
@@ -49,13 +49,13 @@
 }
 
 .menu_container Button FontAwesomeIconView {
-    -fx-fill: #132A13;
+    -fx-fill: linear-gradient(to right, #1b211b, #626262);
 }
 
 .alt_menu_btn {
     -fx-pref-width: 115;
     -fx-pref-height: 40;
-    -fx-background-color: #132A13;
+    -fx-background-color: linear-gradient(to right, #1b211b, #626262);
     -fx-text-fill: #FFFFFF;
     -fx-font-size: 1.1em;
     -fx-alignment: center_left;

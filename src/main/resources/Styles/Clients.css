@@ -18,3 +18,12 @@
     -fx-background-color: #EEEEEE;
     -fx-padding: 10 0 10 0;
 }
+
+.clients_container Button {
+    -fx-background-color: linear-gradient(to right, #1b211b, #626262);
+    -fx-effect: dropshadow(three-pass-box, #AAAAAA, 3, 0, 0, 3);
+    -fx-pref-width: 110;
+    -fx-font-size: 1.5em;
+    -fx-font-family: "Calibri Light";
+    -fx-text-fill: #FFFFFF;
+}

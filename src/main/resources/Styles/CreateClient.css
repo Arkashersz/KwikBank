@@ -35,7 +35,7 @@
 }
 
 .create_client_container Button {
-    -fx-background-color: linear-gradient(to right, #132A13, #253F25);
+    -fx-background-color: linear-gradient(to right, #1b211b, #626262);
     -fx-effect: dropshadow(three-pass-box, #AAAAAA, 3, 0, 0, 3);
     -fx-pref-width: 250;
     -fx-font-size: 1.5em;
